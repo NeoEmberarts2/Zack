@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--Scrollspy using direct java and CSS only-->
+
+<html>
+  <head>
+    <style>
+      div {
+        left= "-500px"
+      }
+    
+     /*Sections*/
+     
+      #section1 {padding-top:relative;height:850px;color: #fff; background-color: #1E88E5;}
+      #section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
+      #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
+      #section4 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+      #section5 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+      
+      
+      
+      /* Borders, colors and positions:
+      
+      */
+      
+      
+      /*Applied to all */ 
+     
+      a {
+        color: black;
+        background-color: yellow;
+        left: 10px;
+        transition: 0.4521s;
+        padding: 120px;
+        width: 80px;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius:150px 555px 120px;
+        padding: 10px 20px;
+
+        background-color: grey;
+        color: white;
+        border: 2px solid green;
+        padding: 10px 20px;
+        text-align: left;
+        text-decoration: none;
+        display: inline-block;
+      }
+      
+      
+      
+      /* active only */ 
+      .test {
+        color: black;
+        background-color: yellow;
+        left: 50px;
+        transition: 0.4521s;
+        padding: 15px;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius:150px 555px 120px;
+        padding: 10px 20px;
+        
+        background-color: white;
+        color: black;
+        border: 2px solid green;
+        padding: 10px 20px;
+        text-align: right;
+        text-decoration: none;
+        display: inline-block;
+      }
+      
+      /* disabled only */ 
+      .no {
+        color: black;
+        background-color: yellow;
+        left: -50x;
+        transition: 0.4521s;
+        padding: 120px;
+        width: 80px;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius:150px 555px 120px;
+        padding: 10px 20px;
+
+        background-color: grey;
+        color: white;
+        border: 2px solid green;
+        padding: 10px 20px;
+        text-align: left;
+        text-decoration: none;
+        display: inline-block;
+      }
+      
+     
+      
+    </style>
+    
+    
+    
+    <!-- Tabs -->
+    
+    
+    <a href="#section1" id="myP" style="position:fixed">About us
+    </a>
+    
+    
+    <br><BR><br><br>
+    <a href="#section2" id="myP2" style="position:fixed">Games
+    </a>
+    
+    
+    <br><BR><br><br>
+    <a href="#section3" id="myP3" style="position:fixed">Empty
+    </a>
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    <!-- Diferent sections -->
+
+  <body>
+   
+    <div id="section1" class="container-fluid">
+
+
+        </ol>
+    </div>
+    <div id="section2" class="container-fluid">
+      <ol><ol><ol><ol><ol>
+
+
+     
+ 
+
+      </ol>
+    </div>
+    <div id="section3" class="container-fluid">
+
+      
+      
+      
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      <!-- This part keeps track of where the scroll is and gives the tabs a class when activated, the tabs regulate the color, position, ect of the tabs -->
+      
+      <script>
+        
+        window.onscroll = function() {myFunction()};
+
+        function myFunction() {
+          if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+            document.getElementById("myP").className = "test";
+            document.getElementById("myP3").className = "no";
+            document.getElementById("myP2").className = "no";
+          } else {
+            document.getElementById("myP").className = "no";
+          }
+          
+          //end of the first one
+          
+          
+          if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000)
+    //the numbers where surpiringly acurate by accident, i just eyeballed the distance Once and never edited it afterwords.//
+          {
+            document.getElementById("myP2").className = "test";
+            document.getElementById("myP").className = "no";
+            document.getElementById("myP3").className = "no";
+          } else {
+            
+            document.getElementById("myP2").className = "no";
+            //end of the second one//
+          }
+          if (document.body.scrollTop > 1500 || document.documentElement.scrollTop > 1500) {
+            //activate//
+            document.getElementById("myP3").className = "test";
+            //deactivate//
+            document.getElementById("myP").className = "no";
+            document.getElementById("myP2").className = "no";
+          } else {
+
+            document.getElementById("myP3").className = "no";
+          }
+//end of all of them//
+        }
+        
+      </script>
+  </body>
+</html>
